@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= category %> Menu</title> <!-- Dynamically set the page title to include the category -->
+</head>
+<body>
+    <%- include('./partials/nav') %> <!-- Including navigation partial -->
+    <h1><%= category %> Menu</h1> <!-- Displaying the capitalized category name in the main heading -->
+    <ul>
+        <% items.forEach(item => { %> <!-- Loop through each item in the passed 'items' array -->
+            <li>
+                <h3><%= item.name %></h3> <!-- Display item name -->
+                <p>Price: $<%= item.price.toFixed(2) %></p> <!-- Display formatted price -->
+                <p>Rating: <%= item.rating %> / 5</p> <!-- Display item rating -->
+                <p>Details: <%= item.details %></p> <!-- Display item details -->
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <h1>Full Menu</h1>
+  <%- include('./partials/nav') %>
+
+  <section>
+    <h2>Mains</h2>
+    <div class="menu-items">
+      <% menu.forEach(function(item) { %>
+        <% if (item.category === 'mains') { %>
+          <div class="menu-item">
+            <h3><%= item.name %></h3>
+            <p>Price: $<%= item.price.toFixed(2) %></p>
+            <p>Rating: <%= item.rating %> stars</p>
+            <p>Details: <%= item.details %></p>
+          </div>
+        <% } %>
+      <% }) %>
+    </div>
+  </section>
+
+  <section>
+    <h2>Desserts</h2>
+    <div class="menu-items">
+      <% menu.forEach(function(item) { %>
+        <% if (item.category === 'desserts') { %>
+          <div class="menu-item">
+            <h3><%= item.name %></h3>
+            <p>Price: $<%= item.price.toFixed(2) %></p>
+            <p>Rating: <%= item.rating %> stars</p>
+            <p>Details: <%= item.details %></p>
+          </div>
+        <% } %>
+      <% }) %>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sides</h2>
+    <div class="menu-items">
+      <% menu.forEach(function(item) { %>
+        <% if (item.category === 'sides') { %>
+          <div class="menu-item">
+            <h3><%= item.name %></h3>
+            <p>Price: $<%= item.price.toFixed(2) %></p>
+            <p>Rating: <%= item.rating %> stars</p>
+            <p>Details: <%= item.details %></p>
+          </div>
+        <% } %>
+      <% }) %>
+    </div>
+  </section>
+</body>
+</html>
+
